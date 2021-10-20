@@ -30,9 +30,11 @@ jobs:
       - run: flutter pub get
       - run: flutter build 
       - run: cd ./android
-      - uses: gradle/gradle-build-action@v2
-        with:
-         arguments: build
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Build SampleApplication
+        run: ./gradlew --no-daemon build
 
 
 
