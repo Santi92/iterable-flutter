@@ -27,7 +27,7 @@ jobs:
       with:
        channel: 'dev'
     - run: flutter pub get
-    - run: flutter build 
+    - run: flutter build appbundle
     - name: Build all artifacts
       id: buildAllApks
       uses: eskatos/gradle-command-action@v1.3.3
