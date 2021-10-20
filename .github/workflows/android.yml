@@ -28,12 +28,9 @@ jobs:
        channel: 'dev'
     - run: flutter pub get
     - run: flutter build 
-    - name: gradlew
-      uses: gradle/gradle-build-action@v2
-      with:
-        gradle-version: 6.5
-    - name: Build with Gradle
-      working-directory: ./android
-      run: gradle testDebugUnitTest
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v2
 
+    - name: Build SampleApplication
+      run: ./gradlew --no-daemon build
 
