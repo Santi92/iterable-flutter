@@ -29,7 +29,10 @@ jobs:
           channel: 'dev'
       - run: flutter pub get
       - run: flutter build 
-      - run: cd ./example/android
-      - run: ./gradlew build
+      - run: cd ./android
+      - uses: gradle/gradle-build-action@v2
+        with:
+         arguments: build
+
 
 
